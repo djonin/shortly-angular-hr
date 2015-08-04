@@ -1,6 +1,11 @@
-<div id='container'>
-<!-- Your code here -->
-
+<div class='creator'>
+  <form name="form" ng-submit="addLink()">
+      <input class='text' type='url' name='urlform' ng-model='link.text'>
+      <div class="validation" ng-messages="form.urlform.$error">
+      	<span class="help-block" ng-show="form.urlform.$error.url">Url is invalid</span>
+      </div>
+      <input type='submit' value='Shorten'>
+  </form>
+  <img class='spinner' src='../assets/spiffygif_46x46.gif'>
+  <div class='message'>{{message}}</div>
 </div>
-
-

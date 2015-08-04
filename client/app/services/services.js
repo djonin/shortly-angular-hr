@@ -12,13 +12,16 @@ angular.module('shortly.services', [])
   };
 
   var newLink = function(link) {
+    var body = {};
+    body.url = link;
     return $http({
       method: 'POST',
       url: '/api/links',
-      data : link
+      data : JSON.stringify(body)
       })
       .then(function (resp) {
-        return resp.status === 201;
+        console.log(resp);
+        return resp;
       });
   };
 
