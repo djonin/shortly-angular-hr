@@ -10,16 +10,29 @@
 
     <div class='navigation'>
     <ul>
-      <li><a href='#/links' class='index'>All Links</a></li>
-      <li><a href='#/shorten' class='create'>Shorten</a></li>
-      <li><a href="#/logout">Log out</a></li>
+      <li><a ui-sref='links' class='index'>All Links</a></li>
+      <li><a ui-sref='shorten' class='create'>Shorten</a></li>
+      <li><a ui-sref='logout'>Log out</a></li>
     </ul>
     </div>
+    <link rel="import" href="lib/polymer/polymer.html">
+    <polymer-element name="my-element">
+      <template>
+        <span>I'm <b>proto-element</b>. Check out my prototype.</span>
+      </template>
+      <script>
+        Polymer({
+          ready: function() {
+            //...
+          }
+        });
+      </script>
+    </polymer-element>
     <!-- the ng-view directive is where our templates will be loaded into when naviagted to -->
-    <div ng-view></div>
+    <div ui-view></div>
 
     <script src="lib/angular/angular.js"></script>
-    <script src="lib/angular-route/angular-route.js"></script>
+    <script src="lib/angular-ui-router/release/angular-ui-router.js"></script>
 
     <script src="app/auth/auth.js"></script>
     <script src="app/links/links.js"></script>
